@@ -1,0 +1,27 @@
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 800px;
+    width: 800px;
+    background-color: black;
+}
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    top: -0.3vh;
+    left: 34.3vw;
+}
+#canvas {
+    height: 100%;
+    width: 100%;
+    border: solid red 2px;
+}
