@@ -6,7 +6,7 @@ const canvasMiddle = { x: canvas.width / 2, y: canvas.height / 2};
 const red = "#FF0000";
 const yellow = "#964B00"
 const green = "#008000";
-const backgroundColor = "black";
+const backgroundColor = "rgba(0,0,0,0.3)";
 const seePathButton = document.querySelector('button');
 
 seePathButton.onclick = ()=>{
