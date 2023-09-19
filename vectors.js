@@ -99,6 +99,7 @@ class Planet {
         const newStar = new Star(100);
         let noRealPlanet = new Planet(this.mass, this.position.copy(), this.velocity.copy(), "blue");
         if (this.steps > 0) {
+            backgroundColor = "black";
             for (let i = 0; i < this.steps; i++) {
                 noRealPlanet.acceleration.setNew(new Vector2d(0, 0));
                 newStar.attract(noRealPlanet);
@@ -113,6 +114,9 @@ class Planet {
                 ctx.closePath();
             }
             this.steps -= 1
+        }
+        else {
+            backgroundColor = "rgba(0,0,0,0.03)";
         }
         
         

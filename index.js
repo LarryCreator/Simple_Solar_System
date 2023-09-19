@@ -6,12 +6,11 @@ const canvasMiddle = { x: canvas.width / 2, y: canvas.height / 2};
 const red = "#FF0000";
 const yellow = "#964B00"
 const green = "#008000";
-const backgroundColor = "rgba(0,0,0,0.3)";
+let backgroundColor = "rgba(0,0,0,0.03)";
 const seePathButton = document.querySelector('button');
 
 seePathButton.onclick = ()=>{
     objects.forEach((planet)=>{
-        console.log(planet.steps);
         if (planet.steps == 0) {
             planet.steps = 2000;
         }
@@ -23,7 +22,7 @@ seePathButton.onclick = ()=>{
 }
 
 
-function clear() {
+function clear(backgroundColor) {
     ctx.fillStyle = backgroundColor;
     ctx.strokeStyle = backgroundColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -45,18 +44,16 @@ let objects = [new Planet(10, new Vector2d(400, canvas.height/2), new Vector2d(M
 const star = new Star(100);
 function gameLoop() {
     requestAnimationFrame(gameLoop);
-    clear();
+    clear(backgroundColor);
 
     drawCircle(star);
     for (planet of objects) {
-        //ball.velocity.limit(20)
         planet.accelerate();
         planet.move();
         drawCircle(planet);
         planet.drawNextSteps();
         planet.acceleration.setNew(new Vector2d(0, 0));
         star.attract(planet);
-        //applyForce(new Vector2d(0, ball.weight), ball);
 
     }
 
